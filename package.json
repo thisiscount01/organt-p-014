@@ -1,0 +1,13 @@
+{
+  "name": "food-knn-game",
+  "version": "1.0.0",
+  "description": "kNN 멀티플레이 식품 탐색 게임 — MFDS 공공데이터 기반",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "selftest": "node server.js --selftest"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

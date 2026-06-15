@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>식품 탐색 게임 — kNN 멀티플레이</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="ui-overlay">
+  <!-- 닉네임 입력 화면 -->
+  <div id="nickname-screen" class="screen">
+    <div class="card">
+      <h1>🍎 식품 탐색 게임</h1>
+      <p>미션에 맞는 식품을 수집해 최고 점수를 획득하세요!</p>
+      <input id="nickname-input" maxlength="8" placeholder="닉네임 (최대 8자)" autocomplete="off">
+      <button id="join-btn">게임 참가</button>
+    </div>
+  </div>
+
+  <!-- 로비 대기 화면 -->
+  <div id="lobby-screen" class="screen hidden">
+    <div class="card">
+      <h2>대기 중…</h2>
+      <p id="lobby-msg">다른 플레이어를 기다리거나 10초 후 자동 시작됩니다.</p>
+      <div class="dot-loader"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- 세션 진행 HUD -->
+  <div id="hud" class="hidden">
+    <div id="mission-bar">
+      <span id="mission-icon">🎯</span>
+      <span id="mission-text">—</span>
+    </div>
+    <div id="timer-bar">
+      <span id="timer-label">남은 시간</span>
+      <span id="timer-val">2:00</span>
+    </div>
+    <div id="combo-bar" class="hidden">
+      <span id="combo-icon">🔥</span>
+      <span id="combo-val">×2</span>
+      <span id="combo-label">연속</span>
+    </div>
+  </div>
+
+  <!-- 리더보드 -->
+  <div id="leaderboard" class="hidden">
+    <div id="lb-title">🏆 순위</div>
+    <ol id="lb-list"></ol>
+  </div>
+
+  <!-- kNN 힌트 툴팁 -->
+  <div id="knn-hint" class="hidden">
+    <span id="knn-icon">🤖</span>
+    <span id="knn-text">AI 힌트</span>
+  </div>
+
+  <!-- 세션 종료 화면 -->
+  <div id="end-screen" class="screen hidden">
+    <div class="card">
+      <h2>🏁 세션 종료</h2>
+      <ol id="final-rankings"></ol>
+      <p id="end-countdown"></p>
+    </div>
+  </div>
+</div>
+
+<!-- 게임 캔버스 -->
+<canvas id="game-canvas"></canvas>
+
+<script src="app.js"></script>
+</body>
+</html>
